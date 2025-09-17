@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Refund Terminal — Automated SOL refunds from creator fees on Pump.fun"/>
+  <title>Refund Terminal</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script>
+    // ✅ Auto-detect NGROK_URL from localStorage for convenience
+    (function () {
+      const savedUrl = localStorage.getItem("NGROK_URL");
+      if (savedUrl) window.NGROK_URL = savedUrl;
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+<pre class="ascii-logo">
+turn on the money printers, BRRRRRRRRRR! 
+
+<a href="https://pump.fun/board" target="_blank" class="link-pump">STOP BEING POOR</a>
+
+SkeletonD3V
+             _       _             __             
+ _ __  _ __(_)_ __ | |_ ___ _ __ / _|_   _ _ __  
+| '_ \| '__| | '_ \| __/ _ \ '__| |_| | | | '_ \ 
+| |_) | |  | | | | | ||  __/ |_ |  _| |_| | | | |
+| .__/|_|  |_|_| |_|\__\___|_(_)|_|  \__,_|_| |_|
+|_|                                              
+
+
+</pre>
+      <div class="subline">
+        <span id="mintLine">Mint: …</span>
+        <span id="devLine"></span>
+      </div>
+      <h4>printing live on pump.fun</h4>
+      <p class="tagline">
+        Automatically prints creator fees back to holders.
+        Every <span id="intervalMins">5</span> minutes the terminal claims & distributes.
+      </p>
+    </header>
+
+    <section class="terminal">
+      <div class="terminal-header">
+        <span class="countdown" id="countdown">Next Distribution In: …</span>
+      </div>
+      <div class="terminal-body" id="terminalOutput">
+        <p>[INFO] Initializing Refund Terminal…</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><strong>Last Fees:</strong> <span id="lastFees">0.000000</span> SOL</div>
+      <div class="stat"><strong>Holders Paid:</strong> <span id="holdersCount">0</span></div>
+      <div class="stat"><strong>Holder Payout:</strong> <span id="holderSOL">0.000000</span> SOL</div>
+    </section>
+
+    <footer class="disclaimer">
+      <p>Printing money should be illegal. DYOR & NFA. 🚀</p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
